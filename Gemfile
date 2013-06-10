@@ -9,7 +9,7 @@ gem "rake", '>= 0.9.4'
 
 # Rubymotion
 gem 'ProMotion'
-gem 'bubble-wrap', :require => ['bubble-wrap/core']
+gem 'bubble-wrap', :git => 'https://github.com/rubymotion/BubbleWrap', :require => ['bubble-wrap/core']
 
 # Development
 gem 'awesome_print_motion'
