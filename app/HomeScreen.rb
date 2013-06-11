@@ -3,6 +3,7 @@ class HomeScreen < PM::Screen
   attr_accessor :reader
 
   def will_appear
+
     @view_loaded ||= begin
       view.backgroundColor = UIColor.whiteColor
 
@@ -18,6 +19,12 @@ class HomeScreen < PM::Screen
   end
 
   def launch_zbar
+
+    if Device.simulator?
+      App.alert("Please run this application on a device to scan bar codes.")
+      return
+    end
+
     ap "Scanning Screen Launched!"
 
     self.reader ||= ZBarReaderViewController.new
